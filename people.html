@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="ga.js"></script>
+<title>Cartoon Set: An Image Dataset of Random Cartoons</title>
+<!-- Top  -->
+<div class="top">
+  <table>
+    <tr>
+      <td class="top-left">
+        <span class="top-8m-text">Cartoon Set&nbsp;</span>
+      </td>
+      <td class="top-right">
+        <a href="index.html">Home</a>
+        <a href="download.html">Download</a>
+        <a href="people.html">Team</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="contents">
+  <div class="page">
+    <h2>Who are we?</h2>
+    <div class="pc">
+      <p>
+        We are part of the <a
+        href="https://research.google.com/teams/perception/" class="ref">Machine Perception</a>
+        organization at Google which tackles the hard
+        problems of understanding images, sounds, music and video.
+      <br><br>
+      If you have questions about the dataset, or would like to be notified of updates, please
+        subscribe to
+        <a href="https://groups.google.com/forum/#!forum/cartoonset-users" class="ref">Google Group: cartoonset-users</a>.
+    </div>
+  </div>
+  <div class="page">
+    <h2>People</h2>
+    <div class="pc">
+      The people who brought you this dataset:
+      <table>
+        <tr>
+          <td id="authors"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- contents -->
+<div class="tos">
+  <table>
+    <tr>
+      <td>
+        <img src="https://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_dark_color_42x16dp.png" alt="Google">
+      </td>
+      <td class="tos-right">
+        <a href="https://www.google.com/">Google</a>
+        <a href="https://www.google.com/intl/en/about/">About Google</a>
+        <a href="https://www.google.com/intl/en/policies/privacy/">Privacy</a>
+        <a href="https://www.google.com/intl/en/policies/terms/">Terms</a>
+        <a href="https://groups.google.com/forum/#!forum/cartoonset-users">Feedback</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<script>
+  var authors = [
+    {name: 'Forrester Cole', img: 'people/fcole.jpg'},
+    {name: 'Inbar Mosseri', img: 'people/inbarm.png'},
+    {name: 'Dilip Krishnan', img: 'people/dilipkay.png'},
+    {name: 'Aaron Sarna', img: 'people/sarna.png'},
+    {name: 'Aaron Maschinot', img: 'people/amaschinot.png'},
+    {name: 'Bill Freeman', img: 'people/bill.jpg'},
+    {name: 'Shiraz Fuman', img: 'people/sfuman.jpg'},
+  ];
+
+  for (var i = 0; i < authors.length; i += 1) {
+    var a = authors[i];
+    var img = $('<img>').attr('src', a.img);
+    $('<div class="author">').append($('<div class="img">').append(img)).append(
+        $('<div class="name">').html(a.name)).appendTo($('#authors'));
+  }
+</script>

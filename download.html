@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+<link rel="stylesheet" href="style.css">
+<script src="ga.js"></script>
+<title>Cartoon Set: An Image Dataset of Random Cartoons</title>
+<!-- Top  -->
+<div class="top">
+  <table>
+    <tr>
+      <td class="top-left">
+        <span class="top-8m-text">Cartoon Set&nbsp;</span>
+      </td>
+      <td class="top-right">
+        <a href="index.html">Home</a>
+        <a href="download.html">Download</a>
+        <a href="people.html">Team</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="contents">
+  <div class="page">
+    <h2>Download (v1.0)</h2>
+    <div class="pc">
+      <p>
+        We provide two disjoint sets of 10k and 100k random cartoons, which can be downloaded here:
+        <br>
+        <ul>
+          <li><a href="https://storage.cloud.google.com/cartoonset_public_files/cartoonset10k.tgz"
+                 download="cartoonset10k.tgz"
+                 onclick="ga('send', 'event', 'Files', 'click', 'cartoonset10k')">cartoonset10k.tgz</a> (450MB)</li>
+          <li><a href="https://storage.cloud.google.com/cartoonset_public_files/cartoonset100k.tgz"
+                 download="cartoonset100k.tgz"
+                 onclick="ga('send', 'event', 'Files', 'click', 'cartoonset100k')">cartoonset100k.tgz</a> (4.45GB)</li>
+        </ul>
+
+      The cartoon images are named <b>csX.png</b>, where <b>X</b> is a hash computed from the cartoon's
+      attribute configuration.
+      <p>
+      Each cartoon image has an accompanying <b>csX.csv</b> file that lists the attributes for that cartoon.
+      Each line in the attribute file contains the attribute name, the index of the selected variant, and the
+      total number of variants for that attribute, for example:
+      <pre>
+      "face_shape", 4, 7
+      "facial_hair", 14, 15
+      "hair", 29, 111
+      "eye_color", 2, 5
+      ...
+      </pre>
+      This data is licensed by Google LLC under a
+      <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License.</a>
+    </div>
+  </div>
+  <div class="page">
+    <h3>Dataset Design</h3>
+    <div class="pc">
+      <p>
+        Each cartoon face in these sets is composed of <b>16 components</b> that vary in <b>10 artwork
+        attributes</b>, <b>4 color attributes</b>, and <b>4 proportion attributes</b>.
+        Colors are chosen from a discrete set of RGB values. The number
+        of options per attribute category ranges from 3, for short/medium/long chin length, to 111,
+        for the largest category, hairstyle. See below for a description of each attribute.
+        <br><br>
+        Each of these components and their variation were drawn by the same artist, Shiraz Fuman,
+      resulting in approximately <b>250</b> cartoon component artworks and <b>~10<sup>13</sup></b> possible
+        combinations. The artwork components are divided into a fixed set of layers
+        that define a Z-ordering for rendering. For instance, the face shape is defined on a layer below
+        the eyes and glasses, so that the artworks are rendered in the correct order. Hair style is a
+        more complex case and needs to be defined on two layers, one behind the face and one in front.
+        There are 8 total layers: hair back, face, hair front, eyes, eyebrows, mouth, facial hair,
+        and glasses.
+        <br><br>
+        The mapping from attribute to artwork is also defined by the artist such that any random
+        selection of attributes produces a visually appealing cartoon without any misaligned
+        artwork; this sometimes involves handling interaction between attributes. For example, the
+        proper way to display a “short beard” changes for different face shapes, which required the
+        artist to create a “short beard” artwork for each face shape.
+    </div>
+    </div>
+    <div class="page">
+    <h3>List of Attributes</h3>
+    <div class="pc">
+      <table>
+        <tr><td></td><td><i># Variants</i></td><td><i>Description</i></td></tr>
+        <tr><td><b><i>Artwork</b></i></td></tr>
+        <tr><td>chin_length</td><td>3</td><td>Length of chin (below mouth region)</td></tr>
+        <tr><td>eye_angle</td><td>3</td><td>Tilt of the eye inwards or outwards</td></tr>
+        <tr><td>eye_lashes</td><td>2</td><td>Whether or not eyelashes are visible</td></tr>
+        <tr><td>eye_lid</td><td>2</td><td>Appearance of the eyelids</td></tr>
+        <tr><td>eyebrow_shape</td><td>14</td><td>Shape of eyebrows</td></tr>
+        <tr><td>eyebrow_weight</td><td>2</td><td>Line weight of eyebrows</td></tr>
+        <tr><td>face_shape</td><td>7</td><td>Overall shape of the face</td></tr>
+        <tr><td>facial_hair</td><td>15</td><td>Type of facial hair (type 14 is no hair)</td></tr>
+        <tr><td>glasses</td><td>12</td><td>Type of glasses (type 11 is no glasses)</td></tr>
+        <tr><td>hair</td><td>111</td><td>Type of head hair</td></tr>
+        <tr><td>&nbsp</td></tr>
+        <tr><td><b><i>Colors</b></i></td></tr>
+        <tr><td>eye_color</td><td>5</td><td>Color of the eye irises</td></tr>
+        <tr><td>face_color</td><td>11</td><td>Color of the face skin</td></tr>
+        <tr><td>glasses_color</td><td>7</td><td>Color of the glasses, if present</td></tr>
+        <tr><td>hair_color</td><td>10</td><td>Color of the hair, facial hair, and eyebrows</td></tr>
+        <tr><td>&nbsp</td></tr>
+        <tr><td><b><i>Proportions</b></i></td></tr>
+        <tr><td>eye_eyebrow_distance</td><td>3</td><td>Distance between the eye and eyebrows</td></tr>
+        <tr><td>eye_slant</td><td>3</td><td>Similar to eye_angle, but rotates the eye and does not change artwork</td></tr>
+        <tr><td>eyebrow_thickness</td><td>4</td><td>Vertical scaling of the eyebrows</td></tr>
+        <tr><td>eyebrow_width</td><td>3</td><td>Horizontal scaling of the eyebrows</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- contents -->
+<div class="tos">
+  <table>
+    <tr>
+      <td>
+        <img src="https://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_dark_color_42x16dp.png" alt="Google">
+      </td>
+      <td class="tos-right">
+        <a href="https://www.google.com/">Google</a>
+        <a href="https://www.google.com/intl/en/about/">About Google</a>
+        <a href="https://www.google.com/intl/en/policies/privacy/">Privacy</a>
+        <a href="https://www.google.com/intl/en/policies/terms/">Terms</a>
+        <a href="https://groups.google.com/forum/#!forum/cartoonset-users">Feedback</a>
+      </td>
+    </tr>
+  </table>
+</div>

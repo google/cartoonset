@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="ga.js"></script>
+<title>Cartoon Set: An Image Dataset of Random Cartoons</title>
+<!-- Top  -->
+<div class="top">
+  <table>
+    <tr>
+      <td class="top-left">
+        <span class="top-8m-text">Cartoon Set&nbsp;</span>
+      </td>
+      <td class="top-right">
+        <a href="index.html">Home</a>
+        <a href="download.html">Download</a>
+        <a href="people.html">Team</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="contents">
+  <div class="alt-page">
+    <div class="pc">
+      <div class="carousel-images" data-slick='{"slidesToShow": 6, 
+                                                "slidesToScroll": 6,
+                                                "autoplay": true,
+                                                "autoplaySpeed": 5000}'>
+        <img src="images/cs100214067654451312.png" />
+        <img src="images/cs100279640926771550.png" />
+        <img src="images/cs100367196602765414.png" />
+        <img src="images/cs100444304289930325.png" />
+        <img src="images/cs100630750052269087.png" />
+        <img src="images/cs101172805621739638.png" />
+        <img src="images/cs101724504648038815.png" />
+        <img src="images/cs101767157496046490.png" />
+        <img src="images/cs10188651804540743.png" />
+        <img src="images/cs101957715605808227.png" />
+        <img src="images/cs102400950696764945.png" />
+        <img src="images/cs102422236815498498.png" />
+        <img src="images/cs102861240281778234.png" />
+        <img src="images/cs102996970073821635.png" />
+        <img src="images/cs103078152548071803.png" />
+        <img src="images/cs10445905019035139.png" />
+        <img src="images/cs1048486361028912.png" />
+        <img src="images/cs10562124521050923.png" />
+        <img src="images/cs10712649413789781.png" />
+        <img src="images/cs10823521825795415.png" />
+        <img src="images/cs11010345522393046.png" />
+        <img src="images/cs11096764340505821.png" />
+        <img src="images/cs1125646615313076.png" />
+        <img src="images/cs11361288859011089.png" />
+        <img src="images/cs11365107979606767.png" />
+        <img src="images/cs10600216310918313110.png" />
+        <img src="images/cs10600435067026865684.png" />
+        <img src="images/cs10600937732450601491.png" />
+        <img src="images/cs10601022940738287637.png" />
+        <img src="images/cs10601706069334235149.png" />
+      </div>
+
+      <p>
+        Cartoon Set is a collection of random, 2D cartoon avatar images.
+        The cartoons vary in <b>10</b> artwork categories, <b>4</b> color categories, and <b>4</b>
+        proportion categories, with a
+        total of <b>~10<sup>13</sup></b> possible combinations. We provide sets of <b>10k</b> and <b>100k</b>
+        randomly chosen cartoons and labeled attributes.
+        <br><br>
+        These cartoons helped develop the technology behind the <a class="ref" href="https://research.googleblog.com/2017/05/neural-network-generated-illustrations.html">
+        personalized stickers</a> in Google Allo. <a class="ref" href="https://allo.google.com/">Download Allo</a> to try it out!
+        <br><br>
+        We've also used the dataset to research cross-domain image translation:
+        <a class="ref" href="https://arxiv.org/abs/1711.05139" target="_blank">
+          XGAN: Unsupervised Image-to-Image Translation for Many-to-Many Mappings</a>.
+        <br>
+
+      <div class="centered">
+        <div id="red-triangle-up"></div>
+        <div id="white-triangle-up"></div>
+        <div id="squares-bubble"></div>
+      </div>
+    </div>
+    <div class="pc centered">
+      Ready to start using Cartoon Set?<br><br>
+      <a href="download.html"><button class="button">Download Dataset</button></a>
+    </div>
+  </div>
+</div>
+<!-- end of contents -->
+<div class="tos">
+  <table>
+    <tr>
+      <td>
+        <img src="https://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_dark_color_42x16dp.png" alt="Google">
+      </td>
+      <td class="tos-right">
+        <a href="https://www.google.com/">Google</a>
+        <a href="https://www.google.com/intl/en/about/">About Google</a>
+        <a href="https://www.google.com/intl/en/policies/privacy/">Privacy</a>
+        <a href="https://www.google.com/intl/en/policies/terms/">Terms</a>
+        <a href="https://groups.google.com/forum/#!forum/cartoonset-users">Feedback</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<script>
+  $(document).ready(function(){
+    $('.carousel-images').slick();
+  });
+</script>
